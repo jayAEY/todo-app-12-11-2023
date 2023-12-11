@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inconsolata", monospace;
+  background-color: #121212;
+  color: whitesmoke;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  min-height: 150px;
+  gap: 25px;
+  padding: 25px;
+  text-align: center;
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: #252525;
+}
+
+h1 {
+  color: #ff0266;
+  font-size: 36pt;
+  font-weight: 900;
+}
+
+#input-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#input-section input {
+  width: 80%;
+  padding: 3px;
+  border-radius: 0;
+  border: none;
+}
+
+#search,
+#add,
+#delete {
+  padding: 2px 8px;
+  border: none;
+  background-color: rgb(94, 92, 92);
+  color: #ff7597; /* width: 50px; */
+}
+
+#todo-section {
+  display: none;
+  /* display: block; */
+}
+
+#list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 250px;
+  text-align: left;
+  /* list-style-position: inside; */
+  color: #121212;
+  margin-bottom: 5px;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff7597;
+  padding: 5px 15px;
+}
