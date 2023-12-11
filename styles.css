@@ -56,9 +56,9 @@ h1 {
 #add,
 #delete {
   padding: 2px 8px;
-  border: none;
-  background-color: rgb(94, 92, 92);
-  color: #ff7597; /* width: 50px; */
+  /* border: none; */
+  /* background-color: rgb(94, 92, 92); */
+  color: #ff7597;
 }
 
 #todo-section {
