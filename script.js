@@ -14,31 +14,40 @@ let deleteButton = document.querySelector("#delete");
 let todosection = document.querySelector("#todo-section");
 let list = document.querySelector("#list");
 
-let tasks = localStorage.getItem("tasks") || [];
+let tasks = [];
 
-// console.log(tasks);
+if (localStorage.getItem("tasks")) {
+  tasks = localStorage.getItem("tasks").split(",");
+}
 
-console.log(addButton);
+function renderTasks() {
+  tasks.forEach((task) => {
+    let newTaskHTML = `<li class="task">
+                     ${task}
+                    <input
+                    class="taskcheckbox"
+                    type="checkbox"
+                    />
+                    </li>`;
+    list.innerHTML += newTaskHTML;
+    console.log(tasks);
+  });
+}
+
+renderTasks();
+
+console.log(tasks);
 
 function addTask(btn) {
   let task = btn.previousElementSibling.value;
 
-  let newTaskHTML = `<li class="task">
-                        ${task}
-                        <input
-                        class="taskcheckbox"
-                        type="checkbox"
-                        />
-                        </li>`;
-
   if (task != "") {
     todosection.style.display = "block";
-    tasks += task;
+    tasks.push(task);
     localStorage.setItem("tasks", tasks);
-    // console.log(list.innerHTML);
-    list.innerHTML += newTaskHTML;
 
-    console.log(localStorage.getItem("tasks"));
+    // console.log(localStorage.getItem("tasks"));
+    // list.innerHTML += newTaskHTML;
   }
   //   if (task == "") {
   //     btn.previousElementSibling
