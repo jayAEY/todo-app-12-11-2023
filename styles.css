@@ -52,14 +52,14 @@ h1 {
   border: none;
 }
 
-#search,
+/* #search,
 #add,
 #delete {
   padding: 2px 8px;
   /* border: none; */
   /* background-color: rgb(94, 92, 92); */
   color: #ff7597;
-}
+} */
 
 #todo-section {
   display: none;
