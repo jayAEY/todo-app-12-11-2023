@@ -16,31 +16,42 @@
     <main>
       <h1>To Do App</h1>
       <section id="input-section">
-        <!-- <form> -->
-        <input
-          id="task-input"
-          type="text"
-          placeholder="Enter task"
-        />
-        <!-- <submit id="add"> Add </submit> -->
-        <button id="add">Add</button>
-        <!-- </form> -->
-        <input
-          id="search-input"
-          type="text"
-          placeholder="Search Task"
-        />
-        <button id="search">Search</button>
+        <form onsubmit="return false">
+          <input
+            id="task-input"
+            type="text"
+            placeholder="Enter task"
+            required
+          />
+          <input
+            id="add"
+            type="submit"
+            value="Add"
+          />
+        </form>
+        <form onsubmit="return false">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search Task"
+            required
+          />
+          <input
+            id="search"
+            type="submit"
+            value="Search"
+          />
+        </form>
       </section>
       <section id="todo-section">
         <ol id="list">
-          <li class="task">
+          <!-- <li class="task">
             Example
             <input
               class="taskcheckbox"
               type="checkbox"
             />
-          </li>
+          </li> -->
           <!-- <li class="task">
             Example
             <input

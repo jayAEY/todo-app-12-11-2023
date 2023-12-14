@@ -16,11 +16,23 @@ let list = document.querySelector("#list");
 
 let tasks = [];
 
-if (localStorage.getItem("tasks")) {
-  tasks = localStorage.getItem("tasks").split(",");
-}
+// if (localStorage.getItem("tasks")) {
+//   tasks = localStorage.getItem("tasks").split(",");
+// }
 
 function renderTasks() {
+  // todosection.style.display = "block";
+
+  if (localStorage.getItem("tasks")) {
+    tasks = localStorage.getItem("tasks").split(",");
+  }
+
+  if (tasks.length > 0) {
+    todosection.style.display = "block";
+
+    console.log(tasks);
+  }
+
   tasks.forEach((task) => {
     let newTaskHTML = `<li class="task">
                      ${task}
@@ -30,13 +42,14 @@ function renderTasks() {
                     />
                     </li>`;
     list.innerHTML += newTaskHTML;
-    console.log(tasks);
   });
 }
 
-renderTasks();
+window.onload = renderTasks();
 
-console.log(tasks);
+// renderTasks();
+
+// console.log(tasks);
 
 function addTask(btn) {
   let task = btn.previousElementSibling.value;
@@ -49,14 +62,19 @@ function addTask(btn) {
     // console.log(localStorage.getItem("tasks"));
     // list.innerHTML += newTaskHTML;
   }
+
+  renderTasks();
   //   if (task == "") {
   //     btn.previousElementSibling
   //   }
   //   console.log(task);
 }
 
-addButton.addEventListener("click", (e) => addTask(e.target));
+addButton.addEventListener("click", (e) => {
+  addTask(e.target);
+});
 
+window.onload = renderTasks();
 // localStorage.getItem("tasks");
 
 // #input-section input {

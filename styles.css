@@ -36,30 +36,52 @@ h1 {
   color: #ff0266;
   font-size: 36pt;
   font-weight: 900;
+  font-kerning: -30px;
 }
 
 #input-section {
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 5px;
+  gap: 20px;
 }
 
-#input-section input {
+#input-section form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+#input-section input[type="text"] {
   width: 80%;
   padding: 3px;
   border-radius: 0;
   border: none;
 }
 
-/* #search,
+#search,
 #add,
 #delete {
   padding: 2px 8px;
-  /* border: none; */
-  /* background-color: rgb(94, 92, 92); */
-  color: #ff7597;
-} */
+  border: none;
+  background-color: rgb(94, 92, 92);
+  color: #ec6e8d;
+}
+
+/* #delete { */
+/* display: none; */
+/* display: flex; */
+/* } */
+
+#search:hover,
+#add:hover,
+#delete:hover {
+  background-color: white;
+  transition: all 0.3s;
+}
 
 #todo-section {
   display: none;
