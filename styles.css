@@ -69,6 +69,7 @@ h1 {
   border: none;
   background-color: rgb(94, 92, 92);
   color: #ec6e8d;
+  cursor: pointer;
 }
 
 /* #delete { */
@@ -88,7 +89,7 @@ h1 {
   /* display: block; */
 }
 
-#list {
+.list {
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -98,6 +99,11 @@ h1 {
   color: #121212;
   margin-bottom: 5px;
 }
+
+#searchList {
+  display: none;
+}
+
 .task {
   display: flex;
   justify-content: space-between;
