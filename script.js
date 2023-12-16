@@ -43,6 +43,7 @@ function tasksHTML() {
     newTaskHTML += addHTML;
   });
   taskList.innerHTML = newTaskHTML;
+  taskList.style.display = "flex";
 }
 
 function addTask(btn) {
@@ -67,11 +68,38 @@ function searchTask(btn) {
         searchHTML += task.outerHTML;
       }
     });
-    // taskList.innerHTML = searchHTML;'
     taskList.style.display = "none";
     searchList.style.display = "flex";
     searchList.innerHTML = searchHTML;
   }
+}
+
+function deleteTasks() {
+  let taskListArr = Array.from(taskList.children);
+  let searchListArr = Array.from(searchList.children);
+
+  let newTasks = [];
+
+  for (let i = 0; i < taskListArr.length; i++) {
+    if (!taskListArr[i].lastElementChild.checked) {
+      newTasks.push(taskListArr[i].innerText.trim());
+    }
+  }
+
+  if (searchList.style.display == "flex") {
+    for (let i = 0; i < searchListArr.length; i++) {
+      if (searchListArr[i].lastElementChild.checked) {
+        let checkedElem = searchListArr[i].innerText.trim();
+        newTasks.splice(newTasks.indexOf(checkedElem), 1);
+      }
+    }
+  }
+
+  tasks = newTasks;
+  if (tasks.length == 0) todosection.style.display = "none";
+  localStorage.setItem("tasks", tasks);
+  tasksHTML();
+  searchList.style.display = "none";
 }
 
 addButton.addEventListener("click", (e) => {
@@ -82,5 +110,6 @@ addButton.addEventListener("click", (e) => {
   }
 });
 searchButton.addEventListener("click", (e) => searchTask(e.target));
+deleteButton.addEventListener("click", (e) => deleteTasks());
 
 window.onload = renderTasks();
