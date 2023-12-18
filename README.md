@@ -9,4 +9,4 @@ Data stored in local storage.
 
 ## Example:
 
-![screenshot with tasks added](assets/Screen Shot 2023-12-18 at 11.11.52.png)
+![screenshot with tasks added](<assets/Screen Shot 2023-12-18 at 11.11.52.png>)
